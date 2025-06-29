@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import Button from './Button';
 import Text from './Text';
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-//import { faCoffee, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
@@ -14,10 +13,6 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
     onDelete(id)
   }
   
-  const acumula = () => {
-    setContador(contador + 1)
-  }
-
   return (
     
 
