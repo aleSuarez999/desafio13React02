@@ -1,8 +1,23 @@
-import { createElement } from "react"
+import React, { createElement } from 'react'
 
-function Text({ as, text, ...props }) {
+const textElements = {
+    h1: "h1",
+    h2: "h2",
+    h3: "h3",
+    h4: "h4",
+    h5: "h5",
+    h6: "h6",
+    nav: "nav",
+    p: "p",
+    span: "span",
+    b: "b",
+    strong: "strong",
+    label: "label"
+}
+
+function Text({as, ...props}) {
   return (
-    createElement(as, { ...props, children: text })
+    createElement(textElements[as] || "p", props)
   )
 }
 

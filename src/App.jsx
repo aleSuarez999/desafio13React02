@@ -1,16 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 import "./index.css";
+import { getTasks, postTasks } from "../utils/api";
 
 export default function App() {
   const [tasks, setTasks] = useState([]);
   // creo el objeto para las tareas y lo inicializo vacio
 
-  const addTask = (text) => {
+  useEffect(() => {
+    setTasks(getTasks)
+
+  }, [])
+  
+
+  const addTask = (values) => {
     const newId = (tasks.length + 1) // le sumo 1 al actual
-    const newTask = { id: newId, text }; // el objeto nuevo con id y tarea
+    console.log("values-<", values)
+    // mando a la api sin el id
+    postTasks(values)
+    const newTask = { id: newId, ...values }; // el objeto nuevo con id y tarea
+    console.log("mando a crear->", newTask)
+    
     setTasks([...tasks, newTask]); // agrego al objeto una nueva tarea
+    // mandar a la base de datos
+    
   };
 
   const deleteTask = (id) => {
