@@ -25,6 +25,7 @@ export default function TaskForm({ onAdd }) {
     setValues({...values, [e.target.name]: e.target.value})
   }
   return (
+    
     <form onSubmit={handleSubmit} className="task-form">
       <Text as="label" >Titulo</Text>
           <input

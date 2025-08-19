@@ -9,12 +9,15 @@ const axiosInstance = axios.create({
 export const getTasks = async () => {
     console.log("llega a gettasks")
     const resp = await axiosInstance.get('/tasks')
-    return resp.data
+    // viene un objeto que tiene el ok y tasks
+//    console.log(resp.data.tasks)
+  //  console.log(resp.data.tasks[0])
+    return resp.data.tasks
 }
 
 export const postTasks = async (body) => {
-    console.log("manda post ", body)
+    //console.log("manda post ", body)
     const resp = await axiosInstance.post('/tasks', body)
-    console.log("recibe  ", resp)
+    //console.log("recibe  ", resp)
     return resp.data
 }
