@@ -19,19 +19,18 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
     <dl className="task-list">
       
       {
-     // (tasks.length > 0) ? (   
           
       tasks.map((task, contador) => (
         <>
-        Nota {contador + 1}: <dt key={task._id} id={task._id} name={task._id}>
+        <dt key={task.title} id={task.title} name={task.title}>{contador + 1}: 
           
           {task.title}</dt>
-          <dd>{task.descript}</dd>
+          <dd id={`${contador+1}`}>{task.descript}</dd>
           <FontAwesomeIcon className='delete_button'  role='button' icon={faTrash} size="1x" onClick={() => sendDelete(task.id)} />
-          <hr/>
+    
         </>
       ))
-   //   ):undefined
+
     }
     </dl>
   );
